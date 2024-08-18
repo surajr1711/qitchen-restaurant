@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* FOR STORYBOOK */
+@font-face {
+	font-family: "Forum";
+	src:
+		url("/fonts/forum/Forum-Regular.woff2") format("woff2"),
+		url("/fonts/forum/Forum-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/**
+* This is a variable font
+* You can control variable axes as shown below:
+* font-variation-settings: wght 900.0;
+* available axes: 'wght' (range from 300.0 to 900.0
+*/
+@font-face {
+	font-family: "Satoshi Variable";
+	src:
+		url("/fonts/satoshi/Satoshi-Variable.woff2") format("woff2"),
+		url("/fonts/satoshi/Satoshi-Variable.woff") format("woff"),
+		url("/fonts/satoshi/Satoshi-Variable.ttf") format("truetype");
+	font-weight: 300 900;
+	font-display: swap;
+	font-style: normal;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Defaults set using tailwind classes */
+@layer base {
+	:root {
+		--font-forum: "Forum";
+		--font-satoshiVariable: "Satoshi Variable";
+	}
+	body {
+		@apply text-primary font-satoshiVariable;
+	}
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
 }

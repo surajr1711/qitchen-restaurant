@@ -1,0 +1,71 @@
+import { Meta, Typeset } from "@storybook/blocks";
+
+<Meta title="Style guide/Fonts" />
+
+export const fonts = {
+	type: {
+		// Font names 'Forum' and 'Satoshi Variable' defined in globals.css by using @font-face with local font files
+		forum: '"Forum", "serif"',
+		satoshiVariable: '"Satoshi Variable", "sans-serif"',
+	},
+	weight: {
+		regular: "400",
+	},
+	size: {
+		s1: 12,
+		s2: 14,
+		s3: 16,
+		m1: 20,
+		m2: 24,
+		m3: 28,
+		l1: 32,
+		l2: 40,
+		l3: 48,
+	},
+};
+
+export const SampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+# Fonts
+
+**Font:** Forum
+
+**Weights:** 400(regular)
+
+<Typeset
+	fontSizes={[
+		Number(fonts.size.s1),
+		Number(fonts.size.s2),
+		Number(fonts.size.s3),
+		Number(fonts.size.m1),
+		Number(fonts.size.m2),
+		Number(fonts.size.m3),
+		Number(fonts.size.l1),
+		Number(fonts.size.l2),
+		Number(fonts.size.l3),
+	]}
+	fontWeight={fonts.weight.regular}
+	sampleText={SampleText}
+	fontFamily={fonts.type.forum}
+/>
+
+**Font:** Satoshi
+
+**Weights:** 400(regular)
+
+<Typeset
+	fontSizes={[
+		Number(fonts.size.s1),
+		Number(fonts.size.s2),
+		Number(fonts.size.s3),
+		Number(fonts.size.m1),
+		Number(fonts.size.m2),
+		Number(fonts.size.m3),
+		Number(fonts.size.l1),
+		Number(fonts.size.l2),
+		Number(fonts.size.l3),
+	]}
+	fontWeight={fonts.weight.regular}
+	sampleText={SampleText}
+	fontFamily={fonts.type.satoshiVariable}
+/>
