@@ -17,80 +17,87 @@ type Story = StoryObj<typeof Typography>;
 
 export const Banner1: Story = {
 	args: {
-		tagStyle: "banner1",
+		variant: "banner1",
 	},
 };
 
 export const Banner2: Story = {
 	args: {
-		tagStyle: "banner2",
+		variant: "banner2",
 	},
 };
 
 export const Banner3: Story = {
 	args: {
-		tagStyle: "banner3",
+		variant: "banner3",
 	},
 };
 
 export const Heading1: Story = {
 	args: {
-		tagStyle: "heading1",
+		variant: "heading1",
 	},
 };
 
 export const Heading2: Story = {
 	args: {
-		tagStyle: "heading2",
+		variant: "heading2",
 	},
 };
 export const Heading3: Story = {
 	args: {
-		tagStyle: "heading3",
+		variant: "heading3",
 	},
 };
 export const Heading4: Story = {
 	args: {
-		tagStyle: "heading4",
+		variant: "heading4",
 	},
 };
 export const Heading5: Story = {
 	args: {
-		tagStyle: "heading5",
+		variant: "heading5",
 	},
 };
 export const Heading6: Story = {
 	args: {
-		tagStyle: "heading6",
+		variant: "heading6",
 	},
 };
 export const Body1: Story = {
 	args: {
-		tagStyle: "body1",
+		variant: "body1",
 	},
 };
 export const Body2: Story = {
 	args: {
-		tagStyle: "body2",
+		variant: "body2",
 	},
 };
 export const Body3: Story = {
 	args: {
-		tagStyle: "body3",
+		variant: "body3",
 	},
 };
 export const Label1: Story = {
 	args: {
-		tagStyle: "label1",
+		variant: "label1",
 	},
 };
 export const Label2: Story = {
 	args: {
-		tagStyle: "label2",
+		variant: "label2",
 	},
 };
 export const Label3: Story = {
 	args: {
-		tagStyle: "label3",
+		variant: "label3",
+	},
+};
+
+export const CustomSize: Story = {
+	args: {
+		variant: "label1",
+		className: "font-forum",
 	},
 };

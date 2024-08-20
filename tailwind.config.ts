@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+import { withTV } from "tailwind-variants/transformer";
 
-const config: Config = {
+const config: Config = withTV({
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
 		extend: {
@@ -18,6 +19,7 @@ const config: Config = {
 			},
 			fontSize: {
 				"2xs": "0.625rem", // 10px
+				"3xs": "0.5rem", // 8px
 			},
 			// screens: {
 			//   'sm': '640px', // => @media (min-width: 640px) { ... }
@@ -29,5 +31,5 @@ const config: Config = {
 		},
 	},
 	plugins: [],
-};
+});
 export default config;
