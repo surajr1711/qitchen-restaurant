@@ -2,12 +2,14 @@ import React from "react";
 import { tv } from "tailwind-variants";
 import Typography from "../Typography/Typography";
 
+export type ButtonVariant = "default" | "primary";
+
 interface ButtonProps {
 	label: string;
-	variant: "default" | "primary";
+	variant: ButtonVariant;
 }
 
-const button = tv({
+export const buttonTV = tv({
 	base: "px-3 h-8 grid place-items-center rounded-lg transition duration-300 ease-in-out xl:px-4 xl:h-10",
 	variants: {
 		variant: {
@@ -22,7 +24,7 @@ const button = tv({
 
 const Button: React.FC<ButtonProps> = ({ label = "Button", variant = "default" }) => {
 	return (
-		<button className={button({ variant })}>
+		<button className={buttonTV({ variant })}>
 			<Typography tag="span" variant="label3">
 				{label}
 			</Typography>

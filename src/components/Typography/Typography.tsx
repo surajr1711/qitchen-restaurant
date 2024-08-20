@@ -50,13 +50,7 @@ const typography = tv({
 	},
 });
 
-const Typography: React.FC<TypographyProps> = ({
-	children,
-	tag = "span",
-	variant = "body1",
-	className = "",
-	...props
-}) => {
+const Typography: React.FC<TypographyProps> = ({ children, tag = "span", variant, className, ...props }) => {
 	const Component = tag;
 
 	return (
