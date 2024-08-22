@@ -24,3 +24,33 @@ export const navbarLinks = [
 		label: "Contact",
 	},
 ];
+
+export const footerLinks = [
+	{
+		route: "#",
+		label: "© Copyright",
+	},
+	{
+		route: "#",
+		label: "Licensing",
+	},
+	{
+		route: "#",
+		label: "Styleguide",
+	},
+];
+
+export const socialLinks = [
+	{
+		route: "#",
+		label: "Instagram",
+	},
+	{
+		route: "#",
+		label: "Facebook",
+	},
+	{
+		route: "#",
+		label: "Twitter",
+	},
+];

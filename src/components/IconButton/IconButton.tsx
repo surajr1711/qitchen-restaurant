@@ -3,7 +3,7 @@ import Icon from "../Icon/Icon";
 import { tv } from "tailwind-variants";
 
 const iconButtonTV = tv({
-	base: "grid place-items-center border border-outline-light transition duration-300 ease-in-out hover:border-outline-medium",
+	base: "grid place-items-center border border-neutral-light transition duration-300 ease-in-out hover:border-neutral-base",
 	variants: {
 		shape: {
 			circle: "rounded-full",

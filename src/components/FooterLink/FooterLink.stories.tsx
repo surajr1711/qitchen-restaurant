@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import PageFooter from "./PageFooter";
+import FooterLink from "./FooterLink";
 
-const meta: Meta<typeof PageFooter> = {
-	component: PageFooter,
+const meta: Meta<typeof FooterLink> = {
+	component: FooterLink,
 	parameters: {
 		layout: "padded",
 	},
@@ -10,6 +10,6 @@ const meta: Meta<typeof PageFooter> = {
 
 export default meta;
 
-type Story = StoryObj<typeof PageFooter>;
+type Story = StoryObj<typeof FooterLink>;
 
 export const Default: Story = {};

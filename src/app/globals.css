@@ -37,7 +37,7 @@
 		--font-satoshiVariable: "Satoshi Variable";
 	}
 	body {
-		@apply text-primary font-satoshiVariable;
+		@apply text-gold-light font-satoshiVariable;
 	}
 }
 

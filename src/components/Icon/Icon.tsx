@@ -5,9 +5,10 @@ import { tv } from "tailwind-variants";
 type Size = "small" | "medium" | "large";
 
 interface IconProps extends React.ComponentPropsWithoutRef<"svg"> {
+	/** small: 16px, medium: 24px, large: 32px */
 	size?: Size;
+	/** Pass the imported SVG */
 	SVG?: React.ReactNode;
-	// react-icons
 }
 
 const icon = tv({
@@ -25,12 +26,7 @@ const icon = tv({
 });
 
 const Icon: React.FC<IconProps> = ({ SVG = QIconSVG, size = "small", className, ...props }) => {
-	return (
-		// <span className={icon({ size, className })} {...props}>
-		// 	<SVG />
-		// </span>
-		<SVG className={icon({ size, className })} {...props} />
-	);
+	return <SVG className={icon({ size, className })} {...props} />;
 };
 
 export default Icon;

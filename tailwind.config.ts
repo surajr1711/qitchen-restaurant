@@ -1,17 +1,26 @@
 import type { Config } from "tailwindcss";
 import { withTV } from "tailwind-variants/transformer";
 
+const gold = {
+	// "gold-dark": "#735e26", // rgb(115, 94, 38) fill button hover
+	"gold-base": "#cfbe91", // rgb(207, 190, 145) fill buttons, fullscreen menu link hover
+	"gold-light": "#efe7d2", // rgb(239, 231, 210) headings, button labels, logo
+	"gold-verylight": "#f5f2eab3", // rgba(245, 242, 234, .7) body, footer links
+};
+
+const neutral = {
+	"neutral-base": "#4e4c47", // rgb(78,76,71) button outline hover
+	"neutral-light": "#333330", // rgb(51, 51, 48) button outline, grid borders, graphics
+	"neutral-dark": "#111111", // rgb(17,17,17) menu background
+};
+
 const config: Config = withTV({
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
 		extend: {
 			colors: {
-				primary: "#efe7d2", // light gold
-				"primary-d": "#cfbe91", // gold
-				surface: "#0a0b0a", // black
-				"outline-light": "#333330",
-				"outline-medium": "#4e4c47",
-				"outline-dark": "#0e0e0e",
+				...gold,
+				...neutral,
 			},
 			fontFamily: {
 				// forum: ["Forum", "serif"],
