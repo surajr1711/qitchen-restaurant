@@ -14,21 +14,21 @@ export const Default: Story = {};
 
 export const Medium: Story = {
 	args: {
-		children: <ArrowRightSVG />,
-		width: "medium",
+		SVG: ArrowRightSVG,
+		size: "medium",
 	},
 };
 
 export const Large: Story = {
 	args: {
-		children: <ArrowRightSVG />,
-		width: "large",
+		SVG: ArrowRightSVG,
+		size: "large",
 	},
 };
 
 export const CustomWidth: Story = {
 	args: {
-		children: <QitchenSVG />,
+		SVG: QitchenSVG,
 		className: "w-40",
 	},
 };

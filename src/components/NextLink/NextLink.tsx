@@ -9,10 +9,10 @@ interface NextLinkProps extends LinkProps, Omit<React.AnchorHTMLAttributes<HTMLA
 	variant?: ButtonVariant;
 }
 
-const NextLink: React.FC<NextLinkProps> = ({ children, variant, ...props }) => {
+const NextLink: React.FC<NextLinkProps> = ({ children, variant = "text", ...props }) => {
 	return (
 		<Link className={buttonTV({ variant })} {...props}>
-			<Typography tag="span" variant="label1">
+			<Typography tag="span" variant="label2">
 				{children}
 			</Typography>
 		</Link>

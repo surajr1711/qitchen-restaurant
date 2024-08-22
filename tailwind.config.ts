@@ -9,7 +9,9 @@ const config: Config = withTV({
 				primary: "#efe7d2", // light gold
 				"primary-d": "#cfbe91", // gold
 				surface: "#0a0b0a", // black
-				outline: "#0e0e0e", // outlines
+				"outline-light": "#333330",
+				"outline-medium": "#4e4c47",
+				"outline-dark": "#0e0e0e",
 			},
 			fontFamily: {
 				// forum: ["Forum", "serif"],

@@ -40,9 +40,9 @@ const typography = tv({
 			body1: "font-satoshiVariable font-light text-base xl:text-lg", // 16 18
 			body2: "font-satoshiVariable font-light text-sm xl:text-base", // 14 16
 			body3: "font-satoshiVariable font-light text-xs xl:text-sm", // 12 14
-			label1: "font-satoshiVariable font-extralight tracking-wider uppercase text-xs xl:text-sm", // 12 14
-			label2: "font-satoshiVariable font-extralight tracking-wider uppercase text-2xs xl:text-xs", // 10 12
-			label3: "font-satoshiVariable font-extralight tracking-wider uppercase text-3xs xl:text-2xs", // 8 10
+			label1: "font-satoshiVariable font-extralight tracking-wider uppercase whitespace-nowrap text-xs xl:text-sm", // 12 14
+			label2: "font-satoshiVariable font-extralight tracking-wider uppercase whitespace-nowrap text-2xs xl:text-xs", // 10 12
+			label3: "font-satoshiVariable font-extralight tracking-wider uppercase whitespace-nowrap text-3xs xl:text-2xs", // 8 10
 		},
 	},
 	defaultVariants: {

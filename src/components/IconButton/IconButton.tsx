@@ -1,23 +1,46 @@
 import React from "react";
 import Icon from "../Icon/Icon";
-import ArrowRightSVG from "../../../public/svgs/arrow-right.svg";
+import { tv } from "tailwind-variants";
+
+const iconButtonTV = tv({
+	base: "grid place-items-center border border-outline-light transition duration-300 ease-in-out hover:border-outline-medium",
+	variants: {
+		shape: {
+			circle: "rounded-full",
+			squircle: "rounded-lg",
+		},
+		size: {
+			small: "w-8 h-8",
+			medium: "w-10 h-10",
+			large: "w-12 h-12",
+		},
+	},
+	defaultVariants: {
+		shape: "circle",
+		size: "small",
+	},
+});
+
+type Shape = "circle" | "squircle";
+type Size = "small" | "medium" | "large";
 
 interface IconButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-	label?: string;
+	/** Shape: Circle, squircle */
+	shape?: Shape;
+	/** Size: Small, medium, large */
+	size?: Size;
 }
 
-const IconButton: React.FC<IconButtonProps> = ({ label = "Icon Button", ...props }) => {
+const IconButton: React.FC<IconButtonProps> = ({
+	children = <Icon />,
+	shape = "circle",
+	size = "small",
+	className,
+	...props
+}) => {
 	return (
-		<button
-			className="group flex flex-nowrap gap-x-2 place-items-center transition duration-300 ease-in-out"
-			{...props}
-		>
-			<span className="font-forum text-base uppercase tracking-wider">{label}</span>
-			<div className="w-8 h-8 grid place-items-center  rounded-full border border-[#333330] transition duration-300 ease-in-out group-hover:border-[#4e4c47]">
-				<Icon className="w-3">
-					<ArrowRightSVG />
-				</Icon>
-			</div>
+		<button className={iconButtonTV({ shape, size, className })} {...props}>
+			{children}
 		</button>
 	);
 };
