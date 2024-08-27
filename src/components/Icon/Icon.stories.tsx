@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Icon from "./Icon";
-import ArrowRightSVG from "../../../public/svgs/arrow-right.svg";
+import ArrowForwardSVG from "../../../public/svgs/arrow-forward.svg";
 import QitchenSVG from "../../../public/brand/qitchen.svg";
 
 const meta: Meta<typeof Icon> = {
@@ -14,14 +14,14 @@ export const Default: Story = {};
 
 export const Medium: Story = {
 	args: {
-		SVG: ArrowRightSVG,
+		SVG: ArrowForwardSVG,
 		size: "medium",
 	},
 };
 
 export const Large: Story = {
 	args: {
-		SVG: ArrowRightSVG,
+		SVG: ArrowForwardSVG,
 		size: "large",
 	},
 };

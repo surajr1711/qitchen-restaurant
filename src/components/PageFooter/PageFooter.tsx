@@ -7,10 +7,7 @@ interface PageFooterProps extends React.ComponentPropsWithoutRef<"footer"> {}
 
 const PageFooter: React.FC<PageFooterProps> = ({ ...props }) => {
 	return (
-		<footer
-			className="py-6 border border-neutral-light rounded-xl flex gap-4 justify-center align-baseline text-gold-verlight"
-			{...props}
-		>
+		<footer className="py-1 flex gap-4 justify-center align-baseline text-gold-verlight" {...props}>
 			<FooterLink>© Copyright</FooterLink>
 
 			<Icon SVG={DiamondSVG} size="medium" className="text-neutral-light" />

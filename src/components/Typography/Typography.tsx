@@ -22,7 +22,7 @@ type Variant =
 interface TypographyProps extends React.ComponentPropsWithoutRef<"span"> {
 	variant?: Variant;
 	tag?: Tag;
-	children?: string;
+	// children?: string;
 }
 
 const typography = tv({

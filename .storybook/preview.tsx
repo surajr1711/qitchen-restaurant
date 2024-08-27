@@ -1,7 +1,7 @@
-import { forum, satoshiVariable } from "../src/app/fonts";
 import type { Preview } from "@storybook/react";
 import { themes } from "@storybook/theming";
-import "../src/app/globals.css";
+// import { satoshiVariable, forum } from "../src/styles/fonts";
+import "../src/styles/globals.css";
 
 const preview: Preview = {
 	tags: ["autodocs"],

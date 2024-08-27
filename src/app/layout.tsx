@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { forum, satoshiVariable } from "./fonts";
-import "./globals.css";
+import { forum, satoshiVariable } from "../styles/fonts";
+import PageHeader from "@/components/PageHeader/PageHeader";
+import PageFooter from "@/components/PageFooter/PageFooter";
+import "@/styles/globals.css";
 
 export const metadata: Metadata = {
 	title: "Qitchen Restaurant",
@@ -13,8 +15,20 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={`${forum.variable} ${satoshiVariable.variable}`}>
-			<body>{children}</body>
+		<html lang="en" className={`${forum.variable} ${satoshiVariable.variable} `}>
+			<body className="bg-black p-4 md:h-screen">
+				{/* 2-row grid layout for main and footer */}
+				<div className="grid gap-2 md:h-full md:grid-rows-[minmax(0,1fr)_auto] md:gap-4">
+					{/* position absolute */}
+					<PageHeader />
+
+					{/* first row */}
+					{children}
+
+					{/* second row */}
+					<PageFooter />
+				</div>
+			</body>
 		</html>
 	);
 }

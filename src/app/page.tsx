@@ -1,49 +1,34 @@
 import Typography from "@/components/Typography/Typography";
 import Image from "next/image";
+import { homepageCardLinks } from "@/constants/Links";
+import ButtonWithIcon from "@/components/ButtonWithIcon/ButtonWithIcon";
+import { CardPageLink } from "@/components/CardPageLink";
 
 const Home = () => {
 	return (
-		<main className="grid grid-cols-1 gap-2 md:grid-cols-3 md:gap-4 xl:h-screen 2xl:grid-cols-4">
-			{/* Hero */}
+		<main className="grid gap-4 md:grid-cols-3 md:grid-rows-[2fr_1fr] xl:grid-cols-3 xl:grid-rows-3 2xl:grid-cols-4">
+			{/* HERO */}
 			<section
 				id="hero"
-				className="bg-neutral-600 min-h-80 grid place-items-center md:col-span-3 xl:col-span-2 xl:row-span-3 2xl:col-span-3"
+				className="relative overflow-hidden bg-neutral-600 rounded-2xl h-[600px] md:col-span-3 md:h-full xl:col-span-2 xl:row-span-3 2xl:col-span-3"
 			>
-				<header>
-					<Typography>Sushi sensation</Typography>
-					{/* <h1>Sushi sensation</h1> */}
+				<video autoPlay loop muted className="absolute -z-0 h-full w-full object-cover">
+					<source src="/videos/Gourmet-Poke-Bowl-Salmon-Rice-Vegetables.webm" type="video/webm" />
+					Your browser does not support the video tag.
+				</video>
+
+				<header className="absolute bottom-8 inset-x-0 text-center xl:text-left xl:left-12">
+					<Typography tag="h1" variant="banner1" className="uppercase">
+						<span className="block">Sushi</span>
+						<span className="block">Sensation</span>
+					</Typography>
 				</header>
 			</section>
 
-			{/* Menu card */}
-			<section id="menu" className="bg-neutral-800 min-h-80 grid place-items-center">
-				<header>
-					<h2>Menu</h2>
-				</header>
-			</section>
-
-			{/* Reservation card */}
-			<section id="reservation" className="bg-neutral-600 min-h-80 grid place-items-center">
-				<header>
-					<h2>Reservation</h2>
-				</header>
-			</section>
-
-			{/* About restaurant card */}
-			<section id="about" className="bg-neutral-800 min-h-80 grid place-items-center">
-				<header>
-					<h2>About</h2>
-				</header>
-			</section>
-
-			{/* <Image
-				src="/qitchen.svg"
-				alt="Qitchen Logo"
-				// className="dark:invert"
-				width={100}
-				height={24}
-				priority
-			/> */}
+			{/* CARDS */}
+			{homepageCardLinks.map((card, i) => (
+				<CardPageLink key={i} href={card.href} src={card.src} alt={card.alt} label={card.label} />
+			))}
 		</main>
 	);
 };

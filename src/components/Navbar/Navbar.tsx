@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ ...props }) => {
 				<li className="hidden">
 					<NextLink href="/">Home</NextLink>
 				</li>
-				<li>
+				<li className="hidden 2xs:block">
 					<NextLink href="/menu">Menu</NextLink>
 				</li>
 				<li className="hidden lg:block">

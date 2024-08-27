@@ -17,11 +17,12 @@
 				"name": "next"
 			}
 		],
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
 			// "@/*": ["./src/*"],
-			"@/components/*": ["components/*"]
-			// "@/styles/*": ["styles/*"],
+			"@/components/*": ["src/components/*"],
+			"@/constants/*": ["src/constants/*"],
+			"@/styles/*": ["src/styles/*"]
 			// "@/utils/*": ["utils/*"]
 		}
 	},
