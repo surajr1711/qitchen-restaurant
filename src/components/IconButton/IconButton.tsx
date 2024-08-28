@@ -2,6 +2,31 @@ import React from "react";
 import Icon from "../Icon/Icon";
 import { tv } from "tailwind-variants";
 
+type Shape = "circle" | "squircle";
+type Size = "small" | "medium" | "large";
+
+type IconButtonBaseProps = {
+	/** Shape: Circle, squircle */
+	shape?: Shape;
+	/** Size: Small, medium, large */
+	size?: Size;
+};
+
+type IconButtonProps =
+	| (React.ComponentPropsWithoutRef<"button"> &
+			IconButtonBaseProps & {
+				as?: "button";
+			})
+	| (React.ComponentPropsWithoutRef<"a"> &
+			IconButtonBaseProps & {
+				as: "a";
+				href: string;
+			})
+	| (React.ComponentPropsWithoutRef<"span"> &
+			IconButtonBaseProps & {
+				as: "span";
+			});
+
 const iconButtonTV = tv({
 	base: "grid place-items-center border border-neutral-light transition duration-300 ease-in-out hover:border-neutral-base",
 	variants: {
@@ -21,16 +46,6 @@ const iconButtonTV = tv({
 	},
 });
 
-type Shape = "circle" | "squircle";
-type Size = "small" | "medium" | "large";
-
-interface IconButtonProps extends React.ComponentPropsWithoutRef<"button"> {
-	/** Shape: Circle, squircle */
-	shape?: Shape;
-	/** Size: Small, medium, large */
-	size?: Size;
-}
-
 const IconButton: React.FC<IconButtonProps> = ({
 	children = <Icon />,
 	shape = "circle",
@@ -38,6 +53,19 @@ const IconButton: React.FC<IconButtonProps> = ({
 	className,
 	...props
 }) => {
+	if (props.as === "a") {
+		return (
+			<a target="_blank" className={iconButtonTV({ shape, size, className })} {...props}>
+				{children}
+			</a>
+		);
+	} else if (props.as === "span") {
+		return (
+			<span className={iconButtonTV({ shape, size, className })} {...props}>
+				{children}
+			</span>
+		);
+	}
 	return (
 		<button className={iconButtonTV({ shape, size, className })} {...props}>
 			{children}

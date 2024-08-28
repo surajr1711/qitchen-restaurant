@@ -3,6 +3,9 @@ import sushi from "../../public/images/Sushi-Rolls-Garnished-with-Salad-Presenta
 import lady from "../../public/images/Woman-White-Wine-Glasses-Intimate-Dinner.webp";
 import restaurant from "../../public/images/Modern-Restaurant-Interior-Japanese-Gourmet-Dining.webp";
 // Social link icons
+import instagram from "../../public/svgs/instagram.svg";
+import facebook from "../../public/svgs/facebook.svg";
+import xtwitter from "../../public/svgs/xtwitter.svg";
 
 export const navbarLinks = [
 	{
@@ -50,17 +53,17 @@ export const socialLinks = [
 	{
 		href: "#",
 		label: "Instagram",
-		iconSVG: "",
+		iconSVG: instagram,
 	},
 	{
 		href: "#",
 		label: "Facebook",
-		iconSVG: "",
+		iconSVG: facebook,
 	},
 	{
 		href: "#",
-		label: "Twitter",
-		iconSVG: "",
+		label: "X Twitter",
+		iconSVG: xtwitter,
 	},
 ];
 

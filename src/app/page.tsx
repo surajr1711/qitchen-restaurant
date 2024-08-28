@@ -1,8 +1,9 @@
 import Typography from "@/components/Typography/Typography";
-import { homepageCardLinks } from "@/constants/Links";
+import { homepageCardLinks, socialLinks } from "@/constants/Links";
 import { CardPageLink } from "@/components/CardPageLink";
 import { RoundCornerWrapper } from "@/components/RoundCornerWrapper";
 import { IconButton } from "@/components/IconButton";
+import { Icon } from "@/components/Icon";
 
 const Home = () => {
 	return (
@@ -27,9 +28,11 @@ const Home = () => {
 				{/* Social Icons */}
 				<RoundCornerWrapper>
 					<div className="flex gap-2">
-						<IconButton></IconButton>
-						<IconButton></IconButton>
-						<IconButton></IconButton>
+						{socialLinks.map((link, i) => (
+							<IconButton key={i} as="a" href={link.href} target="_blank" size="medium">
+								<Icon SVG={link.iconSVG} />
+							</IconButton>
+						))}
 					</div>
 				</RoundCornerWrapper>
 			</section>

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import IconButton from "./IconButton";
 import Icon from "../Icon/Icon";
 import MenuBurgerSVG from "../../../public/svgs/menu.svg";
-import CloseSVG from "../../../public/svgs/close.svg";
+import instagramSVG from "../../../public/svgs/instagram.svg";
 
 const meta: Meta<typeof IconButton> = {
 	component: IconButton,
@@ -22,10 +22,12 @@ export const BurgerMediumSquircle: Story = {
 	},
 };
 
-export const CloseLargeCircle: Story = {
+export const LinkLargeCircle: Story = {
 	args: {
-		children: <Icon SVG={CloseSVG} size="large" />,
+		children: <Icon SVG={instagramSVG} size="large" />,
 		shape: "circle",
 		size: "large",
+		as: "a",
+		href: "#",
 	},
 };

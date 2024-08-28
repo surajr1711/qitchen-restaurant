@@ -24,7 +24,7 @@ const buttonWithIconTV = tv({
 	},
 });
 
-const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ children = "Button label", ...props }) => {
+/* const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ children = "Button label", ...props }) => {
 	const { baseTV, labelTV, iconWrapperTV, iconTV } = buttonWithIconTV({});
 
 	let Component = (props.as || "button") as React.ElementType;
@@ -37,16 +37,15 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ children = "Button labe
 			</div>
 		</Component>
 	);
-};
+}; */
 
-/*
-	//If Component = props.as doesnt work
-	const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ children = "Button label", ...props }) => {
+//If Component = props.as doesnt work
+const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ children = "Button label", ...props }) => {
 	const { baseTV, labelTV, iconWrapperTV, iconTV } = buttonWithIconTV({});
 
 	if (props.as === "a") {
 		return (
-			<a className={baseTV()} {...props}>
+			<a href="#" target="_blank" className={baseTV()} {...props}>
 				<span className={labelTV()}>{children}</span>
 				<div className={iconWrapperTV()}>
 					<Icon className={iconTV()} SVG={ArrowForwardSVG} />
@@ -71,7 +70,7 @@ const ButtonWithIcon: React.FC<ButtonWithIconProps> = ({ children = "Button labe
 			</div>
 		</button>
 	);
-}; */
+};
 
 /*
 // No polymorphic components
