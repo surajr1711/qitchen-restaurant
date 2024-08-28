@@ -1,8 +1,8 @@
 import Typography from "@/components/Typography/Typography";
-import Image from "next/image";
 import { homepageCardLinks } from "@/constants/Links";
-import ButtonWithIcon from "@/components/ButtonWithIcon/ButtonWithIcon";
 import { CardPageLink } from "@/components/CardPageLink";
+import { RoundCornerWrapper } from "@/components/RoundCornerWrapper";
+import { IconButton } from "@/components/IconButton";
 
 const Home = () => {
 	return (
@@ -23,9 +23,18 @@ const Home = () => {
 						<span className="block">Sensation</span>
 					</Typography>
 				</header>
+
+				{/* Social Icons */}
+				<RoundCornerWrapper>
+					<div className="flex gap-2">
+						<IconButton></IconButton>
+						<IconButton></IconButton>
+						<IconButton></IconButton>
+					</div>
+				</RoundCornerWrapper>
 			</section>
 
-			{/* CARDS */}
+			{/* CARDS - Page links */}
 			{homepageCardLinks.map((card, i) => (
 				<CardPageLink key={i} href={card.href} src={card.src} alt={card.alt} label={card.label} />
 			))}

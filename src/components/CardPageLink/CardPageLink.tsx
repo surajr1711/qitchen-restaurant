@@ -3,8 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ButtonWithIcon } from "@/components/ButtonWithIcon";
-import { Icon } from "@/components/Icon";
-import CornerRadiusSVG from "../../../public/svgs/corner-radius.svg";
+import { RoundCornerWrapper } from "@/components/RoundCornerWrapper";
 
 // interface HomepageCardLinkProps extends ImageProps, React.ComponentPropsWithoutRef<'section'> {}
 interface CardPageLinkProps {
@@ -28,11 +27,9 @@ const CardPageLink: React.FC<CardPageLinkProps> = ({ href, src, alt, label, ...p
 			<div className="absolute inset-x-0 inset-y-0 bg-black opacity-20 transition duration-200 ease-in-out group-hover:opacity-0" />
 
 			{/* Button */}
-			<div className="absolute bottom-0 right-0 p-2 pl-4 rounded-tl-3xl bg-black ">
+			<RoundCornerWrapper className="pl-4">
 				<ButtonWithIcon as="span">{label}</ButtonWithIcon>
-				<Icon size="medium" SVG={CornerRadiusSVG} className="absolute bottom-0 -left-6 text-black" />
-				<Icon size="medium" SVG={CornerRadiusSVG} className="absolute -top-6 right-0 text-black" />
-			</div>
+			</RoundCornerWrapper>
 		</Link>
 	);
 };

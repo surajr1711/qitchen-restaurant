@@ -1,7 +1,7 @@
 import React from "react";
+import { tv } from "tailwind-variants";
 import { Icon } from "@/components/Icon";
 import ArrowForwardSVG from "../../../public/svgs/arrow-forward.svg";
-import { tv } from "tailwind-variants";
 
 type ButtonWithIconProps =
 	| (React.ComponentPropsWithoutRef<"button"> & {

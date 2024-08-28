@@ -1,6 +1,8 @@
+// Homepage card link images
 import sushi from "../../public/images/Sushi-Rolls-Garnished-with-Salad-Presentation.webp";
 import lady from "../../public/images/Woman-White-Wine-Glasses-Intimate-Dinner.webp";
 import restaurant from "../../public/images/Modern-Restaurant-Interior-Japanese-Gourmet-Dining.webp";
+// Social link icons
 
 export const navbarLinks = [
 	{
@@ -46,16 +48,19 @@ export const footerLinks = [
 
 export const socialLinks = [
 	{
-		route: "#",
+		href: "#",
 		label: "Instagram",
+		iconSVG: "",
 	},
 	{
-		route: "#",
+		href: "#",
 		label: "Facebook",
+		iconSVG: "",
 	},
 	{
-		route: "#",
+		href: "#",
 		label: "Twitter",
+		iconSVG: "",
 	},
 ];
 
