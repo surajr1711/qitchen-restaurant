@@ -9,27 +9,27 @@ import xtwitter from "../../public/svgs/xtwitter.svg";
 
 export const navbarLinks = [
 	{
-		route: "/",
+		href: "/",
 		label: "Home",
 	},
 	{
-		route: "/menu",
+		href: "/menu",
 		label: "Menu",
 	},
 	{
-		route: "/about",
+		href: "/about",
 		label: "About",
 	},
 	{
-		route: "/reservation",
+		href: "/reservation",
 		label: "Reservation",
 	},
 	{
-		route: "/blog",
+		href: "/blog",
 		label: "Blog",
 	},
 	{
-		route: "/contact",
+		href: "/contact",
 		label: "Contact",
 	},
 ];

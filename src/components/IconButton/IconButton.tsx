@@ -1,5 +1,4 @@
 import React from "react";
-import Icon from "../Icon/Icon";
 import { tv } from "tailwind-variants";
 
 type Shape = "circle" | "squircle";
@@ -46,13 +45,7 @@ const iconButtonTV = tv({
 	},
 });
 
-const IconButton: React.FC<IconButtonProps> = ({
-	children = <Icon />,
-	shape = "circle",
-	size = "small",
-	className,
-	...props
-}) => {
+const IconButton: React.FC<IconButtonProps> = ({ children, shape, size, className, ...props }) => {
 	if (props.as === "a") {
 		return (
 			<a target="_blank" className={iconButtonTV({ shape, size, className })} {...props}>
