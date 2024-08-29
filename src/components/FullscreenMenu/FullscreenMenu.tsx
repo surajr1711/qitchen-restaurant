@@ -1,18 +1,14 @@
-"use client";
-import React, { useState } from "react";
+import React from "react";
 import { Icon } from "@/components/Icon";
-import { IconButton, MenuButton } from "@/components/IconButton";
+import { MenuButton } from "@/components/IconButton";
 import CloseSVG from "../../../public/svgs/close.svg";
 import { navbarLinks } from "@/constants/Links";
-import { NextLink } from "@/components/NextLink";
-import { useMenuStateContext } from "@/contexts/MenuStateProvider";
+import FullscreenMenuLink from "./FullscreenMenuLink";
 
 type FullScreenMenuProps = React.ComponentPropsWithoutRef<"div"> & {};
 
 const FullscreenMenu: React.FC<FullScreenMenuProps> = ({ ...props }) => {
-	const { isOpen, setIsOpen } = useMenuStateContext();
-
-	if (!isOpen) return null;
+	console.log("FullscreenMenu rendered");
 
 	return (
 		<div className="absolute top-0 left-0 bg-black p-4 w-screen h-screen z-20" {...props}>
@@ -28,9 +24,7 @@ const FullscreenMenu: React.FC<FullScreenMenuProps> = ({ ...props }) => {
 				<ul className="h-full grid gap-4 place-content-center">
 					{navbarLinks.map((link, i) => (
 						<li key={i} className="text-center">
-							<NextLink href={link.href} variant="fullscreenMenuLink" onClick={() => setIsOpen(false)}>
-								{link.label}
-							</NextLink>
+							<FullscreenMenuLink href={link.href}>{link.label}</FullscreenMenuLink>
 						</li>
 					))}
 				</ul>

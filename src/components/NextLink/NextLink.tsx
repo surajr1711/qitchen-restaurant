@@ -4,8 +4,8 @@ import { ButtonVariant } from "../Button/Button";
 import { buttonTV } from "../Button/Button";
 import Typography from "../Typography/Typography";
 
-interface NextLinkProps extends LinkProps, Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {
-	children: string;
+export interface NextLinkProps extends LinkProps, Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {
+	children: React.ReactNode;
 	variant?: ButtonVariant | "fullscreenMenuLink";
 }
 

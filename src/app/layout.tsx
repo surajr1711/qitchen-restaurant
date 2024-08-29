@@ -5,6 +5,7 @@ import PageFooter from "@/components/PageFooter/PageFooter";
 import "@/styles/globals.css";
 import MenuStateProvider from "@/contexts/MenuStateProvider";
 import { FullscreenMenu } from "@/components/FullscreenMenu";
+import FullscreenMenuWrapper from "@/components/FullscreenMenu/FullscreenMenuWrapper";
 
 export const metadata: Metadata = {
 	title: "Qitchen Restaurant",
@@ -24,7 +25,10 @@ export default function RootLayout({
 					<div className="grid gap-2 md:h-full md:grid-rows-[minmax(0,1fr)_auto] md:gap-4">
 						{/* position absolute */}
 						<PageHeader />
-						<FullscreenMenu />
+
+						<FullscreenMenuWrapper>
+							<FullscreenMenu />
+						</FullscreenMenuWrapper>
 
 						{/* first row */}
 						{children}
