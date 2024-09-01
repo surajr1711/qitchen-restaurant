@@ -10,14 +10,17 @@ type Story = StoryObj<typeof Button>;
 
 export const DefaultOutlined: Story = {};
 
-export const Filled: Story = {
+export const FilledSmallAnchor: Story = {
 	args: {
+		as: "a",
 		variant: "filled",
+		size: "small",
 	},
 };
 
-export const Text: Story = {
+export const TextSpan: Story = {
 	args: {
+		as: "span",
 		variant: "text",
 	},
 };

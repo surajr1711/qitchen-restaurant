@@ -23,17 +23,18 @@ export default function RootLayout({
 				<body className="bg-black p-4 md:h-screen">
 					{/* 2-row grid layout for main and footer */}
 					<div className="grid gap-2 md:h-full md:grid-rows-[minmax(0,1fr)_auto] md:gap-4">
-						{/* position absolute */}
+						{/* Position absolute */}
 						<PageHeader />
 
+						{/* Position absolute */}
 						<FullscreenMenuWrapper>
 							<FullscreenMenu />
 						</FullscreenMenuWrapper>
 
-						{/* first row */}
+						{/* grid first row */}
 						{children}
 
-						{/* second row */}
+						{/* grid second row */}
 						<PageFooter />
 					</div>
 				</body>

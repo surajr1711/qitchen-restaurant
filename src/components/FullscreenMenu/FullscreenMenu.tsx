@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "@/components/Icon";
 import { MenuButton } from "@/components/IconButton";
 import CloseSVG from "../../../public/svgs/close.svg";
-import { navbarLinks } from "@/constants/Links";
+import { navbarLinks } from "@/constants/links";
 import FullscreenMenuLink from "./FullscreenMenuLink";
 
 type FullScreenMenuProps = React.ComponentPropsWithoutRef<"div"> & {};

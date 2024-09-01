@@ -1,5 +1,6 @@
 import React from "react";
-import NextLink from "../NextLink/NextLink";
+import Button from "../Button/Button";
+import Link from "next/link";
 
 interface NavbarProps extends React.ComponentPropsWithoutRef<"nav"> {}
 
@@ -8,24 +9,36 @@ const Navbar: React.FC<NavbarProps> = ({ ...props }) => {
 		<nav {...props}>
 			<ul className="flex gap-2 flex-nowrap place-items-center">
 				<li className="hidden">
-					<NextLink href="/">Home</NextLink>
+					<Link href={"/"}>
+						<Button as="span">Home</Button>
+					</Link>
 				</li>
 				<li className="hidden 2xs:block">
-					<NextLink href="/menu">Menu</NextLink>
+					<Link href={"/menu"}>
+						<Button as="span">Menu</Button>
+					</Link>
 				</li>
 				<li className="hidden lg:block">
-					<NextLink href="/about">About</NextLink>
+					<Link href="/about">
+						<Button as="span">About</Button>
+					</Link>
 				</li>
 				<li className="hidden lg:block">
-					<NextLink href="/blog">Blog</NextLink>
+					<Link href="/blog">
+						<Button as="span">Blog</Button>
+					</Link>
 				</li>
 				<li className="hidden lg:block">
-					<NextLink href="/contact">Contact</NextLink>
+					<Link href="/contact">
+						<Button as="span">Contact</Button>
+					</Link>
 				</li>
 				<li>
-					<NextLink href="/reservation" variant="filled">
-						Book a table
-					</NextLink>
+					<Link href="/reservation">
+						<Button as="span" variant="filled">
+							Book a table
+						</Button>
+					</Link>
 				</li>
 			</ul>
 		</nav>

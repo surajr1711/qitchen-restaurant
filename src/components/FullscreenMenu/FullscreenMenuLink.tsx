@@ -1,20 +1,29 @@
 "use client";
 
-import { NextLink } from "@/components/NextLink";
-import { NextLinkProps } from "../NextLink/NextLink";
+import Link, { LinkProps } from "next/link";
 import { useMenuStateContext } from "@/contexts/MenuStateProvider";
+import QLink from "../QLink/QLink";
 
-type FullscreenMenuLinkProps = NextLinkProps & {};
-
-const FullscreenMenuLink: React.FC<FullscreenMenuLinkProps> = ({ children, ...props }) => {
+export interface FullscreenMenuLinkProps
+	extends LinkProps,
+		Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {
+	children: React.ReactNode;
+}
+const FullscreenMenuLink: React.FC<FullscreenMenuLinkProps> = ({ children, href, ...props }) => {
 	const { isOpen, setIsOpen } = useMenuStateContext();
 
 	console.log("FullscreenMenuLink rendered");
 
 	return (
-		<NextLink variant="fullscreenMenuLink" onClick={() => setIsOpen(false)} {...props}>
-			{children}
-		</NextLink>
+		<Link href={href} onClick={() => setIsOpen(false)} {...props}>
+			<QLink
+				as="span"
+				textStyle="heading1"
+				className="transition duration-300 ease-in-out hover:text-gold-base hover:no-underline"
+			>
+				{children}
+			</QLink>
+		</Link>
 	);
 };
 

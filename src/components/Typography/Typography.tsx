@@ -2,7 +2,7 @@ import React from "react";
 import { tv } from "tailwind-variants";
 
 type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-type Variant =
+export type Variant =
 	| "banner1"
 	| "banner2"
 	| "banner3"
@@ -25,7 +25,7 @@ interface TypographyProps extends React.ComponentPropsWithoutRef<"span"> {
 	// children?: string;
 }
 
-const typography = tv({
+export const typographyTV = tv({
 	variants: {
 		variant: {
 			banner1: "font-forum text-gold-light text-6xl md:text-7xl xl:text-8xl 2xl:text-9xl", // 56 80 96 128
@@ -57,7 +57,7 @@ const Typography: React.FC<TypographyProps> = ({ children, tag = "span", variant
 	const Component = tag;
 
 	return (
-		<Component className={typography({ variant, className })} {...props}>
+		<Component className={typographyTV({ variant, className })} {...props}>
 			{children || "Placeholder text"}
 		</Component>
 	);

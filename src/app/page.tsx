@@ -1,5 +1,5 @@
 import Typography from "@/components/Typography/Typography";
-import { homepageCardLinks, socialLinks } from "@/constants/Links";
+import { homepageCardLinks, socialLinks } from "@/constants/links";
 import { CardPageLink } from "@/components/CardPageLink";
 import { RoundCornerWrapper } from "@/components/RoundCornerWrapper";
 import { IconButton } from "@/components/IconButton";
