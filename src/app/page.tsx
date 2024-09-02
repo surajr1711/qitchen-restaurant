@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icon";
 
 const Home = () => {
 	return (
-		<main className="grid gap-4 md:grid-cols-3 md:grid-rows-[2fr_1fr] xl:grid-cols-3 xl:grid-rows-3 2xl:grid-cols-4">
+		<main className="h-full grid gap-4 md:grid-cols-3 md:grid-rows-[2fr_1fr] xl:grid-cols-3 xl:grid-rows-3 2xl:grid-cols-4">
 			{/* HERO */}
 			<section
 				id="hero"

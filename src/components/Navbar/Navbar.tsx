@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ ...props }) => {
 						<Button as="span">About</Button>
 					</Link>
 				</li>
-				<li className="hidden lg:block">
+				<li className="hidden">
 					<Link href="/blog">
 						<Button as="span">Blog</Button>
 					</Link>

@@ -1,24 +1,23 @@
 import React from "react";
-import Icon from "../Icon/Icon";
-import DiamondSVG from "../../../public/svgs/diamond.svg";
 import QLink from "../QLink/QLink";
+import Diamond from "../Diamond/Diamond";
 
 interface PageFooterProps extends React.ComponentPropsWithoutRef<"footer"> {}
 
 const PageFooter: React.FC<PageFooterProps> = ({ ...props }) => {
 	return (
-		<footer className="py-1 flex gap-4 justify-center align-baseline text-gold-verlight" {...props}>
+		<footer className="flex gap-4 justify-center align-middle text-gold-verlight" {...props}>
 			<QLink href="#" textStyle="label1">
 				© Copyright
 			</QLink>
 
-			<Icon SVG={DiamondSVG} size="medium" className="text-neutral-light" />
+			<Diamond lineLength="none" />
 
 			<QLink href="#" textStyle="label1">
 				Licensing
 			</QLink>
 
-			<Icon SVG={DiamondSVG} size="medium" className="text-neutral-light" />
+			<Diamond lineLength="none" />
 
 			<QLink href="#" textStyle="label1">
 				Styleguide
