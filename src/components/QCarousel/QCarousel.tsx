@@ -1,16 +1,24 @@
 import React from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
 
-const QCarousel = () => {
+interface QCarouselProps extends React.ComponentPropsWithoutRef<"div"> {
+	images: { src: StaticImport | string; alt: string }[];
+}
+
+const QCarousel: React.FC<QCarouselProps> = ({ images, ...props }) => {
 	return (
-		<Carousel>
+		<Carousel {...props}>
 			<CarouselContent>
-				<CarouselItem>...</CarouselItem>
-				<CarouselItem>...</CarouselItem>
-				<CarouselItem>...</CarouselItem>
+				{images.map((image, i) => (
+					<CarouselItem key={i}>
+						<Image src={image.src} alt={image.alt} className=" h-full object-cover" />
+					</CarouselItem>
+				))}
 			</CarouselContent>
-			<CarouselPrevious />
-			<CarouselNext />
+			<CarouselPrevious className="left-2" />
+			<CarouselNext className="right-2" />
 		</Carousel>
 	);
 };

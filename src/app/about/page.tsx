@@ -4,24 +4,8 @@ import Image from "next/image";
 import HeroImg from "../../../public/images/about/Modern-Restaurant-Interior-Japanese-Gourmet-Dining.webp";
 import { Icon } from "@/components/Icon";
 import StarSVG from "../../../public/svgs/star.svg";
-
-const ratings = [
-	{
-		stars: 5,
-		name: "Trip Advisor",
-		comment: "Best sushi",
-	},
-	{
-		stars: 5,
-		name: "Michelin Guide",
-		comment: "Quality food",
-	},
-	{
-		stars: 5,
-		name: "Start Dining",
-		comment: "Cool vibe",
-	},
-];
+import QCarousel from "@/components/QCarousel/QCarousel";
+import { ratings, descImages, storyImages } from "@/constants/aboutConsts";
 
 const page = () => {
 	return (
@@ -53,7 +37,10 @@ const page = () => {
 							elevate your dining experience.
 						</Typography>
 					</div>
-					<div className="rounded-2xl p-8 border border-neutral-light md:col-span-5">carousel</div>
+					{/* Images */}
+					<div className="rounded-2xl overflow-hidden border border-neutral-light max-h-[400px] md:col-span-5">
+						<QCarousel images={descImages} />
+					</div>
 				</section>
 
 				{/* Ratings */}
@@ -79,7 +66,10 @@ const page = () => {
 
 				{/* Story */}
 				<section id="description" className="grid gap-4 md:row-span-5 md:grid-cols-12">
-					<div className="rounded-2xl p-8 border border-neutral-light md:col-span-5">carousel</div>
+					{/* Images */}
+					<div className="rounded-2xl overflow-hidden border border-neutral-light max-h-[400px] md:col-span-5">
+						<QCarousel images={storyImages} />
+					</div>
 					<div className="rounded-2xl p-8 border border-neutral-light md:col-span-7 md:flex md:flex-col md:justify-between 2xl:p-12">
 						<Typography tag="h2" variant="heading3">
 							Our Story
