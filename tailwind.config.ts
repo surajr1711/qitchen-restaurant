@@ -15,34 +15,33 @@ const neutral = {
 };
 
 const config: Config = withTV({
-	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+    darkMode: ["class"],
+    content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
-		extend: {
-			colors: {
-				...gold,
-				...neutral,
-			},
-			fontFamily: {
-				// forum: ["Forum", "serif"],
-				// satoshiVariable: ["Satoshi Variable", "sans-serif"],
-				forum: ["var(--font-forum)", "serif"],
-				satoshiVariable: ["var(--font-satoshi-variable)", "sans-serif"],
-			},
-			fontSize: {
-				"2xs": "0.625rem", // 10px
-				"3xs": "0.5rem", // 8px
-			},
-			screens: {
-				"2xs": "375px", // => @media (min-width: 375px) { ... }
-				xs: "425px", // => @media (min-width: 425px) { ... }
-				//   'sm': '640px', // => @media (min-width: 640px) { ... }
-				//   'md': '768px', // => @media (min-width: 768px) { ... }
-				//   'lg': '1024px', // => @media (min-width: 1024px) { ... }
-				//   'xl': '1280px', // => @media (min-width: 1280px) { ... }
-				//   '2xl': '1536px', // => @media (min-width: 1536px) { ... }
-			},
-		},
-	},
-	plugins: [],
+    	extend: {
+    		colors: {
+                ...gold,
+                ...neutral
+    		},
+    		fontFamily: {
+    			forum: ["var(--font-forum)", "serif"],
+    			satoshiVariable: ["var(--font-satoshi-variable)", "sans-serif"]
+    		},
+    		fontSize: {
+    			'2xs': '0.625rem',
+    			'3xs': '0.5rem'
+    		},
+    		screens: {
+    			'2xs': '375px',
+    			xs: '425px'
+    		},
+    		borderRadius: {
+    			lg: 'var(--radius)',
+    			md: 'calc(var(--radius) - 2px)',
+    			sm: 'calc(var(--radius) - 4px)'
+    		}
+    	}
+    },
+	plugins: [require("tailwindcss-animate")],
 });
 export default config;

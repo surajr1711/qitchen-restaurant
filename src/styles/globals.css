@@ -35,6 +35,7 @@
 	:root {
 		--font-forum: "Forum";
 		--font-satoshiVariable: "Satoshi Variable";
+		--radius: 0.5rem;
 	}
 	body {
 		@apply text-gold-light font-satoshiVariable;
