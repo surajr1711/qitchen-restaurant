@@ -63,7 +63,7 @@ const page = () => {
 							Our Story
 						</Typography>
 						<Typography tag="p" variant="body1">
-							Founded with a passion for culinary excellence, Qitchen's journey began in the heart of Prague. Over
+							Founded with a passion for culinary excellence, Qitchen&apos;s journey began in the heart of Prague. Over
 							years, it evolved into a haven for sushi enthusiasts, celebrated for its artful mastery and devotion to
 							redefining gastronomy.
 						</Typography>

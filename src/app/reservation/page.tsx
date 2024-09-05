@@ -9,7 +9,7 @@ const page = () => {
 	return (
 		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
 			{/* Hero */}
-			<HeroSection src={heroImage.src} alt={heroImage.alt} title="Book a table" />
+			<HeroSection {...heroImage} title="Book a table" />
 
 			{/* Reservation form */}
 			<section
