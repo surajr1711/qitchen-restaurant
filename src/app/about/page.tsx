@@ -1,28 +1,16 @@
 import React from "react";
 import Typography from "@/components/Typography/Typography";
-import Image from "next/image";
-import HeroImg from "../../../public/images/about/Modern-Restaurant-Interior-Japanese-Gourmet-Dining.webp";
 import { Icon } from "@/components/Icon";
 import StarSVG from "../../../public/svgs/star.svg";
 import QCarousel from "@/components/QCarousel/QCarousel";
-import { ratings, descImages, storyImages } from "@/constants/aboutConsts";
+import { ratings, descImages, storyImages, heroImage } from "@/constants/aboutPageConsts";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 const page = () => {
 	return (
 		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
 			{/* Hero */}
-			<section id="hero" className="p-8 w-full relative h-[600px] xl:h-full">
-				<Image
-					src={HeroImg}
-					alt="Modern Japanese restaurant with a wooden bar, high stools, elegant dish, decorative plant, espresso machine, and warm lighting."
-					className="absolute top-0 left-0 -z-0 h-full w-full object-cover rounded-2xl"
-				/>
-				<header className="absolute bottom-8 inset-x-0 text-center xl:text-left xl:left-12">
-					<Typography tag="h1" variant="banner1" className="uppercase">
-						About
-					</Typography>
-				</header>
-			</section>
+			<HeroSection src={heroImage.src} alt={heroImage.alt} title="About" />
 
 			{/* Content */}
 			<div className="grid gap-4 w-full md:grid-rows-12">

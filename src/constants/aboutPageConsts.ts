@@ -23,6 +23,11 @@ export const ratings = [
 	},
 ];
 
+export const heroImage = {
+	src: restaurant,
+	alt: "Modern Japanese restaurant with a wooden bar, high stools, elegant dish, decorative plant, espresso machine, and warm lighting.",
+};
+
 export const descImages = [
 	{
 		src: woman,

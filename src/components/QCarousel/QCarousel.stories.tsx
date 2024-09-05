@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import QCarousel from "./QCarousel";
-import { descImages } from "@/constants/aboutConsts";
+import { descImages } from "@/constants/aboutPageConsts";
 
 const meta: Meta<typeof QCarousel> = {
 	component: QCarousel,

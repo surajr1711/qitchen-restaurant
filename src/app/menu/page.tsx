@@ -1,30 +1,19 @@
 import React from "react";
-import Image from "next/image";
-import HeroImg from "../../../public/images/Gourmet-Poke-Bowl-Salmon-Rice-Vegetables.webp";
 import Typography from "@/components/Typography/Typography";
 import Button from "@/components/Button/Button";
 import Link from "next/link";
-import { menuCategories, menuItems } from "@/constants/menuPage";
+import { menuCategories, menuItems } from "@/constants/menuPageConsts";
 import { cleanString } from "@/utils/cleanString";
 import MenuCard from "@/components/MenuCard/MenuCard";
 import Diamond from "@/components/Diamond/Diamond";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import { heroImage } from "@/constants/menuPageConsts";
 
 const page = () => {
 	return (
 		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
 			{/* Hero */}
-			<section id="hero" className="p-8 w-full relative h-[600px] xl:h-full">
-				<Image
-					src={HeroImg}
-					alt="Top-down view of a gourmet poke bowl with grilled salmon, rice, greens, and radish. Hands using chopsticks."
-					className="absolute top-0 left-0 -z-0 h-full w-full object-cover rounded-2xl"
-				/>
-				<header className="absolute bottom-8 inset-x-0 text-center xl:text-left xl:left-12">
-					<Typography tag="h1" variant="banner1" className="uppercase">
-						Menu
-					</Typography>
-				</header>
-			</section>
+			<HeroSection src={heroImage.src} alt={heroImage.alt} title="Menu" />
 
 			{/* Menu */}
 			<section id="menu" className="rounded-2xl p-8 w-full border border-neutral-light xl:overflow-scroll">

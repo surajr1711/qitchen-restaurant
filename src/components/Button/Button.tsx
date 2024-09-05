@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 import Typography from "../Typography/Typography";
 
 export type ButtonVariant = "outlined" | "filled" | "text";
-export type ButtonSize = "medium" | "small";
+export type ButtonSize = "large" | "medium" | "small";
 
 type ButtonBaseProps = {
 	variant?: ButtonVariant;
@@ -35,6 +35,7 @@ export const buttonTV = tv({
 			text: "border border-black hover:border-neutral-light",
 		},
 		size: {
+			large: "px-4 py-3 xl:px-5 xl:py-4",
 			medium: "px-3 py-2 xl:px-4 xl:py-3",
 			small: "px-2 py-1",
 		},
@@ -45,7 +46,13 @@ export const buttonTV = tv({
 	},
 });
 
-const Button: React.FC<PolyButtonProps> = ({ children, variant = "outlined", size = "medium", ...props }) => {
+const Button: React.FC<PolyButtonProps> = ({
+	children,
+	className,
+	variant = "outlined",
+	size = "medium",
+	...props
+}) => {
 	const content = (
 		<Typography
 			tag="span"
@@ -59,7 +66,7 @@ const Button: React.FC<PolyButtonProps> = ({ children, variant = "outlined", siz
 	// External links </a>
 	if (props.as === "a") {
 		return (
-			<a target="_blank" className={buttonTV({ variant, size })} {...props}>
+			<a target="_blank" className={buttonTV({ variant, size, className })} {...props}>
 				{content}
 			</a>
 		);
@@ -68,7 +75,7 @@ const Button: React.FC<PolyButtonProps> = ({ children, variant = "outlined", siz
 	// Non-interactive </span>
 	if (props.as === "span") {
 		return (
-			<span className={buttonTV({ variant, size })} {...props}>
+			<span className={buttonTV({ variant, size, className })} {...props}>
 				{content}
 			</span>
 		);
@@ -76,7 +83,7 @@ const Button: React.FC<PolyButtonProps> = ({ children, variant = "outlined", siz
 
 	// Button </button>
 	return (
-		<button className={buttonTV({ variant, size })} {...props}>
+		<button className={buttonTV({ variant, size, className })} {...props}>
 			{content}
 		</button>
 	);

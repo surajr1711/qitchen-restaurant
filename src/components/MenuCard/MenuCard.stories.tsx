@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import MenuCard from "./MenuCard";
-import { menuItems } from "@/constants/menuPage";
+import { menuItems } from "@/constants/menuPageConsts";
 
 const meta: Meta<typeof MenuCard> = {
 	component: MenuCard,
