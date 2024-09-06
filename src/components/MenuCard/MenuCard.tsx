@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { tv } from "tailwind-variants";
 import Typography from "../Typography/Typography";
-import { MenuItem } from "@/constants/menuPage";
+import { MenuItem } from "@/constants/menuPageConsts";
 import { Icon } from "../Icon";
 import LeafSVG from "../../../public/svgs/leaf.svg";
 
@@ -11,7 +11,7 @@ type MenuCardProps = React.ComponentPropsWithoutRef<"div"> & MenuItem & {};
 const menuCardTV = tv({
 	slots: {
 		baseTV: "min-w-64 max-w-[600px] grid gap-4 lg:grid-cols-[160px_auto] lg:gap-8 lg:items-center",
-		imageWrapperTV: "rounded-lg overflow-hidden  lg:w-40",
+		imageWrapperTV: "rounded-lg relative h-64 lg:w-40 lg:h-24",
 		headerTV: "flex justify-between",
 		titleWrapperTV: "flex gap-4",
 	},
@@ -34,7 +34,7 @@ const MenuCard: React.FC<MenuCardProps> = ({
 		<div className={baseTV()} {...props}>
 			{/* Image */}
 			<div className={imageWrapperTV()}>
-				<Image src={imageSrc} alt={imageAlt} />
+				<Image src={imageSrc} alt={imageAlt} fill={true} className="object-cover rounded-lg" />
 			</div>
 
 			{/* content */}

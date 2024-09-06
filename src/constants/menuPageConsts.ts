@@ -1,5 +1,5 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import PokeBowl from "../../public/images/menu/Gourmet-Poke-Bowl-Salmon-Rice-Vegetables.webp";
+import pokeBowl from "../../public/images/menu/Gourmet-Poke-Bowl-Salmon-Rice-Vegetables.webp";
 import spicyTunaMaki from "../../public/images/menu/spicy-tuna-maki.webp";
 import mangoMaki from "../../public/images/menu/mango-maki.webp";
 import salmonMaki from "../../public/images/menu/salmon-maki.webp";
@@ -18,7 +18,7 @@ import pacificFirecrackerSpecialRoll from "../../public/images/menu/pacific-fire
 import eternalEelSpecialRoll from "../../public/images/menu/eternal-eel-special-roll.webp";
 
 export const heroImage = {
-	src: PokeBowl,
+	src: pokeBowl,
 	alt: "Top-down view of a gourmet poke bowl with grilled salmon, rice, greens, and radish. Hands using chopsticks.",
 };
 

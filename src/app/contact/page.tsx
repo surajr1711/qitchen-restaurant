@@ -1,11 +1,14 @@
 import React from "react";
 import HeroSection from "@/components/HeroSection/HeroSection";
-import { heroImage, openingHours } from "@/constants/contactPageConsts";
+import { galleryImages, heroImage, openingHours } from "@/constants/contactPageConsts";
 import Typography from "@/components/Typography/Typography";
 import Diamond from "@/components/Diamond/Diamond";
 import { socialLinks } from "@/constants/links";
 import { IconButton } from "@/components/IconButton";
 import { Icon } from "@/components/Icon";
+import Image from "next/image";
+import { CardPageLink } from "@/components/CardPageLink";
+import googleMap from "../../../public/images/contact/google-map-bw.webp";
 
 const page = () => {
 	return (
@@ -13,9 +16,9 @@ const page = () => {
 			{/* Hero */}
 			<HeroSection {...heroImage} title="Contact" />
 
-			{/* Opening hours */}
-			<section className="grid gap-4 md:grid-cols-2 md:grid-rows-2">
-				{/* hours */}
+			{/* Content */}
+			<section className="grid gap-4 items-stretch md:grid-cols-2 md:grid-rows-2">
+				{/* opening hours */}
 				<section id="hours" className="rounded-2xl p-8 border border-neutral-light flex flex-col justify-between">
 					<header className="pb-12 flex gap-4 justify-center">
 						<Diamond />
@@ -40,18 +43,17 @@ const page = () => {
 
 				{/* images */}
 				<section id="images" className="rounded-2xl grid grid-cols-2 grid-rows-2 gap-4">
-					<div className="rounded-2xl bg-neutral-600"></div>
-					<div className="rounded-2xl bg-neutral-600"></div>
-					<div className="rounded-2xl bg-neutral-600"></div>
-					<div className="rounded-2xl bg-neutral-600"></div>
+					{galleryImages.map((img, i) => (
+						<div key={i} className="relative min-h-40 max-h-80 h-full">
+							<Image src={img.src} alt={img.alt} fill={true} className="rounded-2xl object-cover" />
+						</div>
+					))}
 				</section>
 
 				{/* map */}
-				<section id="map" className="rounded-2xl bg-neutral-600">
-					<header>
-						<h2>Map</h2>
-					</header>
-				</section>
+				<div>
+					<CardPageLink href="#" src={googleMap} alt="dummy location" label="Show route" />
+				</div>
 
 				{/* contact info */}
 				<section id="contactinfo" className="rounded-2xl p-8 border border-neutral-light flex flex-col justify-between">
