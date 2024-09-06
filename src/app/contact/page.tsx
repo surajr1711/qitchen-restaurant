@@ -17,7 +17,7 @@ const page = () => {
 			<HeroSection {...heroImage} title="Contact" />
 
 			{/* Content */}
-			<section className="grid gap-4 items-stretch md:grid-cols-2 md:grid-rows-2">
+			<section className="grid gap-4 md:grid-cols-2 md:grid-rows-2">
 				{/* opening hours */}
 				<section id="hours" className="rounded-2xl p-8 border border-neutral-light flex flex-col justify-between">
 					<header className="pb-12 flex gap-4 justify-center">

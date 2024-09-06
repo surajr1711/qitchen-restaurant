@@ -13,7 +13,7 @@ const page = () => {
 	return (
 		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
 			{/* Hero */}
-			<HeroSection src={heroImage.src} alt={heroImage.alt} title="Menu" />
+			<HeroSection {...heroImage} title="Menu" />
 
 			{/* Menu */}
 			<section id="menu" className="rounded-2xl p-8 w-full border border-neutral-light xl:overflow-scroll">
