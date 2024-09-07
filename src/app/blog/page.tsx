@@ -1,8 +1,9 @@
+import React from "react";
 import Diamond from "@/components/Diamond/Diamond";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Typography from "@/components/Typography/Typography";
-import { heroImage } from "@/constants/blogPageConsts";
-import React from "react";
+import { blogs, heroImage } from "@/constants/blogPageConsts";
+import BlogCard from "@/components/BlogCard/BlogCard";
 
 const page = () => {
 	return (
@@ -21,6 +22,11 @@ const page = () => {
 				</header>
 
 				{/* blog items */}
+				<div className="@container/blogs grid gap-8 justify-center">
+					{blogs.map((blog, i) => (
+						<BlogCard key={i} {...blog} />
+					))}
+				</div>
 			</section>
 		</main>
 	);

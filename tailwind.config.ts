@@ -15,33 +15,33 @@ const neutral = {
 };
 
 const config: Config = withTV({
-    darkMode: ["class"],
-    content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+	darkMode: ["class"],
+	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
-    	extend: {
-    		colors: {
-                ...gold,
-                ...neutral
-    		},
-    		fontFamily: {
-    			forum: ["var(--font-forum)", "serif"],
-    			satoshiVariable: ["var(--font-satoshi-variable)", "sans-serif"]
-    		},
-    		fontSize: {
-    			'2xs': '0.625rem',
-    			'3xs': '0.5rem'
-    		},
-    		screens: {
-    			'2xs': '375px',
-    			xs: '425px'
-    		},
-    		borderRadius: {
-    			lg: 'var(--radius)',
-    			md: 'calc(var(--radius) - 2px)',
-    			sm: 'calc(var(--radius) - 4px)'
-    		}
-    	}
-    },
-	plugins: [require("tailwindcss-animate")],
+		extend: {
+			colors: {
+				...gold,
+				...neutral,
+			},
+			fontFamily: {
+				forum: ["var(--font-forum)", "serif"],
+				satoshiVariable: ["var(--font-satoshi-variable)", "sans-serif"],
+			},
+			fontSize: {
+				"2xs": "0.625rem",
+				"3xs": "0.5rem",
+			},
+			screens: {
+				"2xs": "375px",
+				xs: "425px",
+			},
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)",
+			},
+		},
+	},
+	plugins: [require("tailwindcss-animate"), require("@tailwindcss/container-queries")],
 });
 export default config;

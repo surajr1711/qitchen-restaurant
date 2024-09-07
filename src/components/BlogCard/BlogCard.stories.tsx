@@ -4,9 +4,19 @@ import { blogs } from "@/constants/blogPageConsts";
 
 const meta: Meta<typeof BlogCard> = {
 	component: BlogCard,
+	parameters: {
+		layout: "padded",
+	},
 	args: {
 		...blogs[0],
 	},
+	decorators: [
+		(Story) => (
+			<div className="@container/blogs">
+				<Story />
+			</div>
+		),
+	],
 };
 
 export default meta;

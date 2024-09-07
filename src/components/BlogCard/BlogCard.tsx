@@ -8,14 +8,14 @@ type BlogCardProps = React.ComponentPropsWithoutRef<"div"> & BlogT & {};
 
 const BlogCard: React.FC<BlogCardProps> = ({ src, alt, date, title, desc, ...props }) => {
 	return (
-		<div className="border border-neutral-light flex flex-col gap-4 md:flex-row md:gap-6 md:max-w-xl" {...props}>
+		<div className="flex flex-col gap-2 max-w-[800px] @md/blogs:flex-row @md:gap-6" {...props}>
 			{/* image */}
-			<div className="relative min-w-64 min-h-56 max-w-md md:flex-none md:w-1/3">
+			<div className="relative min-w-[200px] aspect-[3/2] md:flex-none md:w-1/3">
 				<Image src={src} alt={alt} fill={true} className=" rounded-2xl object-cover" />
 			</div>
 
 			{/* content */}
-			<div className="flex flex-col gap-2 flex-grow ">
+			<div className="flex-grow p-1 flex flex-col gap-2 justify-center ">
 				{/* date */}
 				<div className="flex gap-4">
 					<Diamond lineLength="none" />
