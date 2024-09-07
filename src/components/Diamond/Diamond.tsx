@@ -3,7 +3,7 @@ import { tv } from "tailwind-variants";
 
 interface DiamondProps extends React.ComponentPropsWithoutRef<"span"> {
 	/** Length of line in px */
-	lineLength?: "sm" | "md" | "lg" | "none";
+	lineLength?: "xs" | "sm" | "md" | "lg" | "none";
 	/** Line location left or right */
 	lineSide?: "left" | "right";
 }
@@ -22,6 +22,9 @@ const diamondTV = tv({
 		lineLength: {
 			none: {
 				lineTV: "w-0",
+			},
+			xs: {
+				lineTV: "w-4",
 			},
 			sm: {
 				lineTV: "w-7",

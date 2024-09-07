@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import Typography from "@/components/Typography/Typography";
 import { blogs, heroImage } from "@/constants/blogPageConsts";
 import BlogCard from "@/components/BlogCard/BlogCard";
+import Link from "next/link";
 
 const page = () => {
 	return (
@@ -24,7 +25,9 @@ const page = () => {
 				{/* blog items */}
 				<div className="@container/blogs grid gap-8 justify-center">
 					{blogs.map((blog, i) => (
-						<BlogCard key={i} {...blog} />
+						<Link key={i} href={`/blog/${blog.slug}`}>
+							<BlogCard {...blog} />
+						</Link>
 					))}
 				</div>
 			</section>
