@@ -7,7 +7,7 @@ import { socialLinks } from "@/constants/links";
 import { IconButton } from "@/components/IconButton";
 import { Icon } from "@/components/Icon";
 import Image from "next/image";
-import { CardPageLink } from "@/components/CardPageLink";
+import HomepageCard from "@/components/HomepageCard/HomepageCard";
 import googleMap from "../../../public/images/contact/google-map-bw.webp";
 import { Metadata } from "next";
 
@@ -53,14 +53,23 @@ const page = () => {
 				<section id="images" className="rounded-2xl grid grid-cols-2 grid-rows-2 gap-4">
 					{galleryImages.map((img, i) => (
 						<div key={i} className="relative min-h-40 max-h-80 h-full">
-							<Image src={img.src} alt={img.alt} fill={true} className="rounded-2xl object-cover" />
+							<Image
+								src={img.src}
+								alt={img.alt}
+								fill={true}
+								className="rounded-2xl object-cover"
+								placeholder="blur"
+								sizes="50vw, (min-width: 768px) 25vw, (min-width: 1280px) 12vw"
+							/>
 						</div>
 					))}
 				</section>
 
 				{/* map */}
 				<div>
-					<CardPageLink href="#" src={googleMap} alt="dummy location" label="Show route" />
+					<a href="#">
+						<HomepageCard src={googleMap} alt="dummy location" label="Show route" />
+					</a>
 				</div>
 
 				{/* contact info */}

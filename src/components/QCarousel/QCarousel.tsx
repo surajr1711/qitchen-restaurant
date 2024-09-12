@@ -13,7 +13,13 @@ const QCarousel: React.FC<QCarouselProps> = ({ images, ...props }) => {
 			<CarouselContent>
 				{images.map((image, i) => (
 					<CarouselItem key={i}>
-						<Image src={image.src} alt={image.alt} className=" h-full object-cover" />
+						<Image
+							src={image.src}
+							alt={image.alt}
+							className=" h-full object-cover"
+							placeholder="blur"
+							sizes="100vw, (min-width: 768px) 40vw, (min-width: 1280px) 25vw"
+						/>
 					</CarouselItem>
 				))}
 			</CarouselContent>

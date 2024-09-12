@@ -19,7 +19,6 @@ export const metadata: Metadata = {
 const page = () => {
 	return (
 		<>
-			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection {...heroImage} title="Menu" />
 
@@ -55,7 +54,6 @@ const page = () => {
 					);
 				})}
 			</section>
-			{/* </main> */}
 		</>
 	);
 };

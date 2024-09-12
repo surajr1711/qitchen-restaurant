@@ -1,15 +1,15 @@
 import Typography from "@/components/Typography/Typography";
 import { socialLinks } from "@/constants/links";
 import { homepageCardLinks } from "@/constants/homePageConsts";
-import { CardPageLink } from "@/components/CardPageLink";
 import { RoundCornerWrapper } from "@/components/RoundCornerWrapper";
 import { IconButton } from "@/components/IconButton";
 import { Icon } from "@/components/Icon";
+import PageTransitionLink from "@/components/PageTransitionLink/PageTransitionLink";
+import HomepageCard from "@/components/HomepageCard/HomepageCard";
 
 const Home = () => {
 	return (
 		<>
-			{/* <main className="h-full grid gap-4 md:grid-cols-3 md:grid-rows-[2fr_1fr] xl:grid-cols-3 xl:grid-rows-3 2xl:grid-cols-4"> */}
 			{/* HERO */}
 			<section
 				id="hero"
@@ -40,10 +40,20 @@ const Home = () => {
 			</section>
 
 			{/* CARDS - Page links */}
-			{homepageCardLinks.map((card, i) => (
-				<CardPageLink key={i} href={card.href} src={card.src} alt={card.alt} label={card.label} />
-			))}
-			{/* </main> */}
+			{homepageCardLinks.map((card, i) => {
+				const { href, src, alt, label } = card;
+				return (
+					<PageTransitionLink key={i} href={href}>
+						<HomepageCard
+							src={src}
+							alt={alt}
+							label={label}
+							priority={true}
+							sizes="100vw, (min-width: 768px) 33vw, (min-width: 1280px) 33vw, (min-width: 1536px) 25vw"
+						/>
+					</PageTransitionLink>
+				);
+			})}
 		</>
 	);
 };

@@ -28,6 +28,11 @@ const nextConfig = {
 	},
 
 	// ...other config
+
+	// Image formats
+	images: {
+		formats: ["image/avif", "image/webp"],
+	},
 };
 
 export default nextConfig;

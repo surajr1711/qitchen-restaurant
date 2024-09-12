@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import CardPageLink from "./CardPageLink";
+import CardPageLink from "./HomepageCard";
 import { homepageCardLinks } from "@/constants/homePageConsts";
 
 const meta: Meta<typeof CardPageLink> = {

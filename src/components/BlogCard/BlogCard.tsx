@@ -11,7 +11,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ src, alt, date, title, desc, ...pro
 		<div className="flex flex-col gap-2 max-w-[800px] @md/blogs:flex-row @md:gap-6" {...props}>
 			{/* image */}
 			<div className="relative min-w-[200px] aspect-[3/2] md:flex-none md:w-1/3">
-				<Image src={src} alt={alt} fill={true} className=" rounded-2xl object-cover" />
+				<Image
+					src={src}
+					alt={alt}
+					fill={true}
+					className=" rounded-2xl object-cover"
+					placeholder="blur"
+					sizes="90vw, (min-width: 546px) 280px"
+				/>
 			</div>
 
 			{/* content */}

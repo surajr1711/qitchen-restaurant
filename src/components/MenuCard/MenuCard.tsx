@@ -34,7 +34,14 @@ const MenuCard: React.FC<MenuCardProps> = ({
 		<div className={baseTV()} {...props}>
 			{/* Image */}
 			<div className={imageWrapperTV()}>
-				<Image src={imageSrc} alt={imageAlt} fill={true} className="object-cover rounded-lg" />
+				<Image
+					src={imageSrc}
+					alt={imageAlt}
+					fill={true}
+					className="object-cover rounded-lg"
+					placeholder="blur"
+					sizes="100vw, (min-width: 640px) 600px, (min-width: 1024px) 160px"
+				/>
 			</div>
 
 			{/* content */}

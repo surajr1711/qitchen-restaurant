@@ -7,6 +7,7 @@ import Link, { LinkProps } from "next/link";
 interface PageTransitionLinkProps extends LinkProps {
 	href: string;
 	children: React.ReactNode;
+	className?: string;
 }
 
 const wait = (ms: number): Promise<void> => {

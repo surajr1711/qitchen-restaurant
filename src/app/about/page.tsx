@@ -43,7 +43,8 @@ const page = () => {
 				<section id="ratings" className="grid gap-4 md:row-span-2 md:grid-cols-3">
 					{ratings.map((rating, i) => {
 						return (
-							<div key={i} className="rounded-2xl p-4 border border-neutral-light grid text-center 2xl:p-8">
+							<div key={i} className="rounded-2xl p-4 border border-neutral-light text-center grid content-center">
+								{/* <div key={i} className="rounded-2xl p-4 border border-neutral-light grid text-center 2xl:p-8"> */}
 								<div className="flex gap-1 justify-center pb-2">
 									{Array.from({ length: rating.stars }).map((_, i) => (
 										<Icon key={i} SVG={StarSVG} className="text-gold-base" />
