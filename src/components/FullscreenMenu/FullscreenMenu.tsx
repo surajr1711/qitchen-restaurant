@@ -8,10 +8,10 @@ import FullscreenMenuLink from "./FullscreenMenuLink";
 type FullScreenMenuProps = React.ComponentPropsWithoutRef<"div"> & {};
 
 const FullscreenMenu: React.FC<FullScreenMenuProps> = ({ ...props }) => {
-	console.log("FullscreenMenu rendered");
+	// console.log("FullscreenMenu rendered");
 
 	return (
-		<div className="absolute top-0 left-0 bg-black p-4 w-screen h-screen z-20" {...props}>
+		<div className="w-full h-full" {...props}>
 			<div className="relative border border-neutral-light bg-neutral-dark rounded-2xl h-full">
 				{/* Close Menu button */}
 				<div className="absolute mt-4 ml-4">

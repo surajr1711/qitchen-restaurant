@@ -6,10 +6,12 @@ import "@/styles/globals.css";
 import MenuStateProvider from "@/contexts/MenuStateProvider";
 import { FullscreenMenu } from "@/components/FullscreenMenu";
 import FullscreenMenuWrapper from "@/components/FullscreenMenu/FullscreenMenuWrapper";
+import GlobalComponentsLayout from "@/components/GlobalComponentsLayout/GlobalComponentsLayout";
 
 export const metadata: Metadata = {
-	title: "Qitchen Restaurant",
-	description: "Your place for gourmet japanese cuisine",
+	title: "Qitchen - Gourmet Japanese cuisine",
+	description:
+		"Experience the finest gourmet Japanese cuisine at Qitchen. Indulge in our exclusive sushi and traditional dishes with a modern twist. Book your table today!",
 };
 
 export default function RootLayout({
@@ -20,23 +22,26 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={`${forum.variable} ${satoshiVariable.variable} `}>
 			<MenuStateProvider>
-				<body className="p-4 bg-black md:h-screen">
-					{/* 2-row grid layout for main and footer */}
-					<div className="grid gap-2 md:h-full md:grid-rows-[minmax(0,1fr)_auto] md:gap-4">
-						{/* Position absolute */}
-						<PageHeader />
+				<body className="min-h-screen box-border bg-black transition-opacity duration-300 ease-in-out">
+					{/* Homepage has md:h-screen while others have xl:h-screen so this is a client comopnent to check path and aply layout accordingly  */}
+					<GlobalComponentsLayout>
+						{/* 2-row grid layout for main and footer */}
+						<div className="grid gap-2 md:h-full md:grid-rows-[minmax(0,1fr)_auto] md:gap-4">
+							{/* Position absolute */}
+							<PageHeader />
 
-						{/* Position absolute */}
-						<FullscreenMenuWrapper>
-							<FullscreenMenu />
-						</FullscreenMenuWrapper>
+							{/* Position absolute */}
+							<FullscreenMenuWrapper>
+								<FullscreenMenu />
+							</FullscreenMenuWrapper>
 
-						{/* grid first row. Only the <main> of every page */}
-						<div className="rounded-2xl overflow-scroll">{children}</div>
+							{/* grid first row. Only the <main> of every page */}
+							{children}
 
-						{/* grid second row */}
-						<PageFooter />
-					</div>
+							{/* grid second row */}
+							<PageFooter />
+						</div>
+					</GlobalComponentsLayout>
 				</body>
 			</MenuStateProvider>
 		</html>

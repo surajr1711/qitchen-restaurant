@@ -3,15 +3,35 @@ import { blogs } from "@/constants/blogPageConsts";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Diamond from "@/components/Diamond/Diamond";
 import Typography from "@/components/Typography/Typography";
+import { Metadata } from "next";
 
-const blogArticle = ({ params }: { params: { slug: string } }) => {
+type PageProps = {
+	params: {
+		slug: string;
+	};
+};
+
+// can be async
+export const generateMetadata = ({ params }: PageProps): Metadata => {
+	// fetch data from db/server
+	const data = blogs.find((blog) => blog.slug === params.slug);
+
+	return {
+		title: `Blog | ${data?.title}`,
+		description: data?.desc,
+	};
+};
+
+const blogArticle = ({ params }: PageProps) => {
 	// fetch the data from your db/server endpoint followed by the slug of your record
+	// can be a server function // "use server"
 	const data = blogs.find((blog) => blog.slug === params.slug);
 
 	if (!data) return null;
 
 	return (
-		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
+		<>
+			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection src={data.src} alt={data.alt} title="" />
 
@@ -37,12 +57,14 @@ const blogArticle = ({ params }: { params: { slug: string } }) => {
 					<div dangerouslySetInnerHTML={{ __html: data.body }} />
 				</div>
 			</section>
-		</main>
+			{/* </main> */}
+		</>
 	);
 };
 
 export default blogArticle;
 
+// can be async
 export const generateStaticParams = () => {
 	return blogs.map((post) => ({ slug: post.slug }));
 };

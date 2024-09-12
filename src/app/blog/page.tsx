@@ -5,10 +5,18 @@ import Typography from "@/components/Typography/Typography";
 import { blogs, heroImage } from "@/constants/blogPageConsts";
 import BlogCard from "@/components/BlogCard/BlogCard";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Qitchen Blog - Culinary Insights & restaurant updates",
+	description:
+		"Stay updated with the latest news and insights from Qitchen. Explore articles on gourmet Japanese cuisine, culinary craftsmanship, and our unique dining experiences. Discover the art of sushi and more!",
+};
 
 const page = () => {
 	return (
-		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
+		<>
+			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection {...heroImage} title="Blog" />
 
@@ -31,7 +39,8 @@ const page = () => {
 					))}
 				</div>
 			</section>
-		</main>
+			{/* </main> */}
+		</>
 	);
 };
 

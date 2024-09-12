@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
-import Link from "next/link";
+// import Link from "next/link";
+import Link from "../PageTransitionLink/PageTransitionLink";
 
 interface NavbarProps extends React.ComponentPropsWithoutRef<"nav"> {}
 

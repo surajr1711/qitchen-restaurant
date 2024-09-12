@@ -4,10 +4,18 @@ import HeroSection from "@/components/HeroSection/HeroSection";
 import { heroImage } from "@/constants/reservationPageConsts";
 import Diamond from "@/components/Diamond/Diamond";
 import QForm from "@/components/QForm/QForm";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Reserve a Table at Qitchen",
+	description:
+		"Secure your spot at Qitchen, where exceptional Japanese cuisine and a remarkable dining experience await. Book your table online and enjoy our gourmet sushi and elegant ambiance. Reserve now!",
+};
 
 const page = () => {
 	return (
-		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
+		<>
+			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection {...heroImage} title="Book a table" />
 
@@ -32,7 +40,8 @@ const page = () => {
 				{/* Form */}
 				<QForm />
 			</section>
-		</main>
+			{/* </main> */}
+		</>
 	);
 };
 

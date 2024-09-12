@@ -9,10 +9,18 @@ import { Icon } from "@/components/Icon";
 import Image from "next/image";
 import { CardPageLink } from "@/components/CardPageLink";
 import googleMap from "../../../public/images/contact/google-map-bw.webp";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Contact - Gourmet Japanese Cuisine in London",
+	description:
+		"Get in touch with Qitchen, your destination for gourmet Japanese cuisine in London. Open Mon-Sun 16:00-22:30. Visit us at 23 Greenfield Avenue! Call +42 1234 567890.",
+};
 
 const page = () => {
 	return (
-		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
+		<>
+			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection {...heroImage} title="Contact" />
 
@@ -97,7 +105,8 @@ const page = () => {
 					</div>
 				</section>
 			</section>
-		</main>
+			{/* </main> */}
+		</>
 	);
 };
 

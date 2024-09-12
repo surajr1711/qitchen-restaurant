@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
+import PageTransitionLink from "../PageTransitionLink/PageTransitionLink";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ButtonWithIcon } from "@/components/ButtonWithIcon";
 import { RoundCornerWrapper } from "@/components/RoundCornerWrapper";
@@ -24,7 +25,7 @@ const cardPageLinkTV = tv({
 const CardPageLink: React.FC<CardPageLinkProps> = ({ href, src, alt, label, className, ...props }) => {
 	const { baseTV, overlayTV } = cardPageLinkTV();
 	return (
-		<Link href={href} className={baseTV({ className })} {...props}>
+		<PageTransitionLink href={href} className={baseTV({ className })} {...props}>
 			{/* background image */}
 			<Image src={src} alt={alt} fill={true} className="rounded-2xl object-cover" />
 
@@ -36,7 +37,7 @@ const CardPageLink: React.FC<CardPageLinkProps> = ({ href, src, alt, label, clas
 			<RoundCornerWrapper className="pl-4">
 				<ButtonWithIcon as="span">{label}</ButtonWithIcon>
 			</RoundCornerWrapper>
-		</Link>
+		</PageTransitionLink>
 	);
 };
 

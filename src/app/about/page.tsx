@@ -5,10 +5,18 @@ import StarSVG from "../../../public/svgs/star.svg";
 import QCarousel from "@/components/QCarousel/QCarousel";
 import { ratings, descImages, storyImages, heroImage } from "@/constants/aboutPageConsts";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "About - Gourmet Japanese Cuisine & Sushi Artistry",
+	description:
+		"Discover the story behind Qitchen, where culinary craftsmanship meets modern elegance. Learn about our journey, accolades, and dedication to providing the finest gourmet Japanese cuisine. Join us for an unforgettable dining experience!",
+};
 
 const page = () => {
 	return (
-		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
+		<>
+			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection src={heroImage.src} alt={heroImage.alt} title="About" />
 
@@ -70,7 +78,8 @@ const page = () => {
 					</div>
 				</section>
 			</div>
-		</main>
+			{/* </main> */}
+		</>
 	);
 };
 

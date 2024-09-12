@@ -8,10 +8,18 @@ import MenuCard from "@/components/MenuCard/MenuCard";
 import Diamond from "@/components/Diamond/Diamond";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import { heroImage } from "@/constants/menuPageConsts";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Menu - Maki, Uramaki and Special Rolls",
+	description:
+		"Explore Qitchen’s exquisite Sushi menu featuring our delicious maki, uramaki, and special rolls, crafted to perfection. Maki $5, Uramaki $12, Special rolls $16.",
+};
 
 const page = () => {
 	return (
-		<main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1">
+		<>
+			{/* <main className="grid gap-4 h-full xl:grid-cols-2 xl:grid-rows-1"> */}
 			{/* Hero */}
 			<HeroSection {...heroImage} title="Menu" />
 
@@ -47,7 +55,8 @@ const page = () => {
 					);
 				})}
 			</section>
-		</main>
+			{/* </main> */}
+		</>
 	);
 };
 
