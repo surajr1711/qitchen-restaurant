@@ -7,6 +7,7 @@ import MenuStateProvider from "@/contexts/MenuStateProvider";
 import { FullscreenMenu } from "@/components/FullscreenMenu";
 import FullscreenMenuWrapper from "@/components/FullscreenMenu/FullscreenMenuWrapper";
 import GlobalComponentsLayout from "@/components/GlobalComponentsLayout/GlobalComponentsLayout";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
 	title: "Qitchen - Gourmet Japanese cuisine",
@@ -42,6 +43,7 @@ export default function RootLayout({
 							<PageFooter />
 						</div>
 					</GlobalComponentsLayout>
+					<Toaster />
 				</body>
 			</MenuStateProvider>
 		</html>

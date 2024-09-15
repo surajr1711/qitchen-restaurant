@@ -3,7 +3,7 @@ import Typography from "@/components/Typography/Typography";
 import Button from "@/components/Button/Button";
 import Link from "next/link";
 import { menuCategories, menuItems } from "@/constants/menuPageConsts";
-import { cleanString } from "@/utils/cleanString";
+import { cleanString } from "@/lib/utils";
 import MenuCard from "@/components/MenuCard/MenuCard";
 import Diamond from "@/components/Diamond/Diamond";
 import HeroSection from "@/components/HeroSection/HeroSection";

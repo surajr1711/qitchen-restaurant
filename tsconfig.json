@@ -24,8 +24,7 @@
 			"@/constants/*": ["src/constants/*"],
 			"@/contexts/*": ["src/contexts/*"],
 			"@/styles/*": ["src/styles/*"],
-			"@/animations/*": ["src/animations/*"],
-			"@/utils/*": ["src/utils/*"]
+			"@/animations/*": ["src/animations/*"]
 		},
 		"noUnusedLocals": true,
 		"noUnusedParameters": true
