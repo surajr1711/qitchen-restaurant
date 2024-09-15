@@ -1,6 +1,7 @@
 "use server";
 
 import { QFormData, qFormSchema } from "@/components/QForm/qFormSchema";
+import { sendEmail } from "./sendEmail";
 
 type SuccessT = {
 	message: string;
@@ -34,12 +35,15 @@ export const onSubmitAction = async (formData: FormData): Promise<FormState> => 
 	console.log("Data received on server was parsed successfully: ", parsed.data);
 
 	// if parsing is successful, perform some server check/logic/operation. example: saving to database, checking in DB if email already exists
+	// example of server side check
 	if (parsed.data.message.includes("booking exists")) {
 		return {
 			message: `A booking already exists under ${parsed.data.name}`,
 			issues: ["Please contact our office for reservation changes."],
 		};
 	}
+	// send email to owner/customer id
+	sendEmail(parsed.data);
 
 	// if server operation is successful return object with message and data
 	return {
