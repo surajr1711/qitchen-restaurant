@@ -49,15 +49,18 @@ export const socialLinks = [
 		href: "#",
 		label: "Instagram",
 		iconSVG: instagram,
+		ariaLabel: "Go to Qitchen&apos;s Instagram page",
 	},
 	{
 		href: "#",
 		label: "Facebook",
 		iconSVG: facebook,
+		ariaLabel: "Go to Qitchen&apos;s Facebook page",
 	},
 	{
 		href: "#",
 		label: "X Twitter",
 		iconSVG: xtwitter,
+		ariaLabel: "Go to Qitchen&apos;s Twitter page",
 	},
 ];

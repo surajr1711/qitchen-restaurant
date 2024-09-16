@@ -31,7 +31,7 @@ const Home = () => {
 				<RoundCornerWrapper>
 					<div className="flex gap-2">
 						{socialLinks.map((link, i) => (
-							<IconButton key={i} as="a" href={link.href} target="_blank" size="medium">
+							<IconButton key={i} as="a" href={link.href} target="_blank" size="medium" aria-label={link.ariaLabel}>
 								<Icon SVG={link.iconSVG} />
 							</IconButton>
 						))}

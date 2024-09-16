@@ -23,7 +23,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ ...props }) => {
 
 			{/* Brand Logo */}
 			<div>
-				<Link href="/" className="block pt-1 w-24 lg:w-32 ">
+				<Link href="/" className="block pt-1 w-24 lg:w-32" aria-label="Qitchen restaturant homepage">
 					<Qitchen />
 				</Link>
 			</div>

@@ -14,7 +14,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ children, ...props }) => {
 	};
 
 	return (
-		<IconButton as="button" shape="squircle" size="large" onClick={handleClick} {...props}>
+		<IconButton as="button" shape="squircle" size="large" onClick={handleClick} aria-label="Fullscreen Menu" {...props}>
 			{children}
 		</IconButton>
 	);
