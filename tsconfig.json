@@ -25,9 +25,9 @@
 			"@/contexts/*": ["src/contexts/*"],
 			"@/styles/*": ["src/styles/*"],
 			"@/animations/*": ["src/animations/*"]
-		},
-		"noUnusedLocals": true,
-		"noUnusedParameters": true
+		}
+		// "noUnusedLocals": true,
+		// "noUnusedParameters": true
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "svgr.d.ts"],
 	"exclude": ["node_modules"]

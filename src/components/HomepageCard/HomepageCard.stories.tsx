@@ -15,7 +15,7 @@ type Story = StoryObj<typeof CardPageLink>;
 
 export const Default: Story = {
 	args: {
-		href: homepageCardLinks[0].href,
+		// href: homepageCardLinks[0].href,
 		src: homepageCardLinks[0].src,
 		alt: homepageCardLinks[0].alt,
 		label: homepageCardLinks[0].label,
