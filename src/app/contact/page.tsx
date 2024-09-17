@@ -105,7 +105,7 @@ const page = () => {
 							<Typography variant="label2">Follow</Typography>
 							<div className="flex gap-2 justify-end">
 								{socialLinks.map((social, i) => (
-									<IconButton key={i} as="a" href={social.href}>
+									<IconButton key={i} as="a" href={social.href} aria-label={social.ariaLabel}>
 										<Icon SVG={social.iconSVG} />
 									</IconButton>
 								))}
