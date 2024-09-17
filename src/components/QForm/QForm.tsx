@@ -13,15 +13,6 @@ import { onSubmitAction } from "@/actions/submitForm";
 import { useToast } from "@/hooks/use-toast";
 
 const QForm = () => {
-	// const formRef = useRef<HTMLFormElement>(null);
-	/* 	const [state, formAction] = useFormState(onSubmitAction, {
-		message: "",
-		data: {
-			name: "",
-			email: "",
-			message: "",
-		},
-	}); */
 	const { toast } = useToast();
 
 	// 2. Define the form
@@ -49,17 +40,12 @@ const QForm = () => {
 
 		// pass formdata to a server action
 		const response = await onSubmitAction(formData);
-
 		// do something with the server response
-		console.log(response);
-		let description: string =
-			"data" in response
-				? `We will send a confirmation email to ${response.data.email} with the date and time of your reservation.`
-				: response.issues[0];
 		toast({
 			title: response.message,
-			description,
+			description: response.description,
 			duration: 10000,
+			variant: response.ok ? "default" : "destructive",
 		});
 	};
 

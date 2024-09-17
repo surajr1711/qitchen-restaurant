@@ -1,21 +1,18 @@
 "use server";
 
-import { QFormData, qFormSchema } from "@/components/QForm/qFormSchema";
+import { qFormSchema } from "@/components/QForm/qFormSchema";
 import { sendEmail } from "./sendEmail";
 
-type SuccessT = {
+// onSubmitAction is a server action that expects FormData and returns the type of Response
+interface OnSubmitActionReturn {
 	message: string;
-	data: QFormData;
-};
-type ErrorT = {
-	message: string;
-	issues: string[];
-};
+	description: string;
+	data?: any;
+	status: number;
+	ok: boolean;
+}
 
-type FormState = SuccessT | ErrorT;
-
-export const onSubmitAction = async (formData: FormData): Promise<FormState> => {
-	// export const onSubmitAction = async (prevState: FormState, formData: FormData): Promise<FormState> => {
+export const onSubmitAction = async (formData: FormData): Promise<OnSubmitActionReturn> => {
 	// convert formdata type object into regular json object
 	const data = Object.fromEntries(formData);
 	// parse and validate the data on server side using the zod schema
@@ -25,29 +22,46 @@ export const onSubmitAction = async (formData: FormData): Promise<FormState> => 
 	if (!parsed.success) {
 		// if result is error return object with message and string array of errors
 		const issues = parsed.error.issues.map((issue) => issue.message);
-		console.log("Data recieved on server is invalid: ", issues);
+		// console.error("Data is invalid: ", issues);
 		return {
-			message: "Invalid data",
-			issues,
+			message: "Data is invalid",
+			description: issues.join(". "),
+			status: 400,
+			ok: false,
 		};
 	}
 
-	console.log("Data received on server was parsed successfully: ", parsed.data);
-
-	// if parsing is successful, perform some server check/logic/operation. example: saving to database, checking in DB if email already exists
+	// console.info("Data parsed successfully: ", parsed.data);
+	// if parsing was successful, perform some server check/logic/operation. example: saving to database, checking in DB if email already exists
 	// example of server side check
 	if (parsed.data.message.includes("booking exists")) {
 		return {
-			message: `A booking already exists under ${parsed.data.name}`,
-			issues: ["Please contact our office for reservation changes."],
+			message: `Booking already exists for ${parsed.data.name}, ${parsed.data.email}`,
+			description: "Please contact our office. Our staff will help you with any changes to your reservation.",
+			status: 400,
+			ok: false,
 		};
 	}
-	// send email to owner/customer id
-	sendEmail(parsed.data);
 
-	// if server operation is successful return object with message and data
+	// once data is valid AND server check has passed, send email to owner/customer id
+	const response = await sendEmail(parsed.data);
+
+	if (!response.ok) {
+		// console.error(response.json().then((json) => json.error));
+		return {
+			message: "Sorry, something went wrong.",
+			description: "Please contact our office. Our staff will help you with your reservation.",
+			status: 500,
+			ok: false,
+		};
+	}
+
+	// console.info(response.json().then((json) => json.data));
 	return {
-		message: "Thank you for your booking request.",
-		data: parsed.data,
+		message: "Thank you! Your request was received.",
+		description: `We will send a confirmation email to ${parsed.data.email} with the date and time of your reservation.`,
+		// data: parsed.data,
+		status: 200,
+		ok: true,
 	};
 };
