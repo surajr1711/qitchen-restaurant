@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	// FOR DEV URL TO PRO URL
+	env: {
+		BASE_URL: process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000",
+	},
 	// FOR SVGR PACKAGE
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
