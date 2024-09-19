@@ -1,6 +1,5 @@
 import { Forum } from "next/font/google";
 import localFont from "next/font/local";
-// import "./globals.css";
 
 export const forum = Forum({
 	weight: "400",
