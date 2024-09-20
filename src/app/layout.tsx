@@ -27,7 +27,7 @@ export default function RootLayout({
 					{/* Homepage has md:h-screen while others have xl:h-screen so this is a client comopnent to check path and aply layout accordingly  */}
 					<GlobalComponentsLayout>
 						{/* 2-row grid layout for main and footer */}
-						<div className="grid gap-2 md:h-full md:grid-rows-[minmax(0,1fr)_auto] md:gap-4">
+						<div className="grid gap-4 md:h-full md:grid-rows-[minmax(0,1fr)_auto]">
 							{/* Position absolute */}
 							<PageHeader />
 

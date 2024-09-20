@@ -6,7 +6,7 @@ interface PageFooterProps extends React.ComponentPropsWithoutRef<"footer"> {}
 
 const PageFooter: React.FC<PageFooterProps> = ({ ...props }) => {
 	return (
-		<footer className="flex gap-4 justify-center align-middle text-gold-verlight" {...props}>
+		<footer className="flex gap-2 justify-center align-middle text-gold-verlight md:gap-4" {...props}>
 			<QLink href="https://github.com/surajr1711/qitchen-restaurant" textStyle="label1">
 				Github repo
 			</QLink>
