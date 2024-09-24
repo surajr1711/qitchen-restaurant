@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 	title: "Qitchen - Gourmet Japanese cuisine",
 	description:
 		"Experience the finest gourmet Japanese cuisine at Qitchen. Indulge in our exclusive sushi and traditional dishes with a modern twist. Book your table today!",
+	metadataBase: new URL(process.env.BASE_URL!),
 };
 
 export default function RootLayout({
