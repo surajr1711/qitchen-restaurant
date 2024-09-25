@@ -5,6 +5,7 @@ import pokeBowl from "../../public/images/menu/Gourmet-Poke-Bowl-Salmon-Rice-Veg
 
 export const heroImage = {
 	src: pokeBowl,
+	srcUrl: "/images/menu/Gourmet-Poke-Bowl-Salmon-Rice-Vegetables.webp",
 	alt: "Top-down view of a gourmet poke bowl with grilled salmon, rice, greens, and radish. Hands using chopsticks.",
 };
 
