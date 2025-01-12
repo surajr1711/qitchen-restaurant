@@ -1,6 +1,6 @@
 # Project overview
 
-This is a Next.js practice project to build out a template website design.
+This project demonstrates front-end development and production optimization capabilities needed for building out a website design.
 
 **Production Site**
 https://qitchen-restaurant.vercel.app
